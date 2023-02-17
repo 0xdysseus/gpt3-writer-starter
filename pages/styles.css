@@ -35,12 +35,12 @@ body {
     gap: 64px;
 }
 
-.header {    
+.header {
     display: flex;
     flex-direction: column;
     width: 100%;
     align-items: center;
-    color: #FFF
+    color: RGB(135, 206, 235)
 }
 
 .header-title {
@@ -63,7 +63,7 @@ body {
     font-style: normal;
     font-weight: 400;
     line-height: 1.4em;
-    color: rgba(255, 255, 255, 0.75);
+    color: RGB(211, 211, 211);
 }
 
 .prompt-container {
@@ -74,7 +74,7 @@ body {
     flex-flow: column nowrap;
     gap: 16px;
     height: min-content;
-    padding: 0px;
+    padding: 10px;
     width: min-content;
 }
 
@@ -93,7 +93,7 @@ body {
     flex: 0 0 auto;
     flex-flow: column nowrap;
     gap: 10px;
-    height: 150px;
+    height: 100px;
     overflow: hidden;
     padding: 20px;
     position: relative;
@@ -103,7 +103,7 @@ body {
     overflow: auto;
     outline: none;
     resize: none;
-    font-size: 16px;
+    font-size: 20px;
     font-style: normal;
     letter-spacing: 0px;
     line-height: 1.6em;
@@ -111,15 +111,16 @@ body {
     color: rgba(255, 255, 255, 0.75);
     text-decoration: none;
     text-transform: none;
+    margin-top: -100px;
 }
 
 textarea {
-    font-family: 'Manrope', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 
 .prompt-box:focus {
-    border-color:rgba(255, 255, 255, 0.75)
+    border-color:RGB(153, 50, 204);
 }
 
 
@@ -172,7 +173,7 @@ textarea {
 .generate-button {
     place-content: flex-start;
     align-items: flex-start;
-    background-color: rgb(255, 79, 18);
+    background-color: RGB(153, 50, 204);
     border-radius: 100px;
     display: flex;
     flex: 0 0 auto;
