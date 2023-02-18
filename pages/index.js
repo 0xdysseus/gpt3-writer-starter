@@ -10,7 +10,6 @@ const Home = () => {
 
   const callGenerateEndpoint = async () => {
     setIsGenerating(true);
-
     console.log("Calling OpenAI...")
     const response = await fetch('/api/generate', {
       method: 'POST',
@@ -19,14 +18,13 @@ const Home = () => {
       },
       body: JSON.stringify({ userInput }),
     });
-
     const data = await response.json();
     const { output } = data;
     console.log("OpenAI replied...", output.text)
-
     setApiOutput(`${output.text}`);
     setIsGenerating(false);
   }
+
   const onUserChangedText = (event) => {
     console.log(event.target.value);
     setUserInput(event.target.value);
@@ -34,18 +32,18 @@ const Home = () => {
   return (
     <div className="root">
       <Head>
-        <title>GPT-3 Writer | buildspace</title>
+        <title>CLI-Wizard</title>
       </Head>
       <div className="container">
         <div className="header">
           <div className="header-title">
-            <h1>CLI Wizard</h1>
+            <h1>CLI - Wizard</h1>
           </div>
           <div className="header-subtitle">
             <h2>Generate complex command lines with ease</h2>
           </div>
         </div>
-        // add this code here
+
         <div className="prompt-container">
           <textarea
             placeholder="start typing here"
@@ -63,7 +61,6 @@ const Home = () => {
               </div>
             </a>
           </div>
-          {/* New code I added here */}
           {apiOutput && (
           <div className="output">
             <div className="output-header-container">
@@ -77,18 +74,6 @@ const Home = () => {
           </div>
           )}
         </div>
-      </div>
-      <div className="badge-container grow">
-        <a
-          href="https://buildspace.so/builds/ai-writer"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <div className="badge">
-            <Image src={buildspaceLogo} alt="buildspace logo" />
-            <p>build with buildspace</p>
-          </div>
-        </a>
       </div>
     </div>
   );
